@@ -1,0 +1,11 @@
+﻿ListPlayers
+ListTransferHistory
+ListTeams
+ListStadiums
+GetPlayer
+GetTean
+GetStadium
+TransferPlayer
+UpsertPlayer
+UpsertStadium
+UpsertTeam
