@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RugbyManagement.Framework.Models;
 using RugbyManagement.Framework.ViewModels;
 using System.Numerics;
 
@@ -40,7 +41,7 @@ namespace RugbyManagement.Controllers
 
         [Route("UpsertTeam")]
         [HttpPost]
-        public IActionResult UpsertTeam(GetTeamResult team)
+        public IActionResult UpsertTeam(TeamPostModel team)
         {
             try
             {

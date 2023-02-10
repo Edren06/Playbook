@@ -1,4 +1,5 @@
 ﻿using RugbyManagement.Framework.DbConnector;
+using RugbyManagement.Framework.Models;
 
 namespace RugbyManagement.Framework.ViewModels
 {
@@ -14,7 +15,7 @@ namespace RugbyManagement.Framework.ViewModels
             return DataContext.DatabaseObjects.GetPlayer(playerId).SingleOrDefault();
         }
 
-        public void UpsertPlayer(GetPlayerResult player)
+        public void UpsertPlayer(PlayerPostModel player)
         {
             DataContext.DatabaseObjects.UpsertPlayer(player);
         }

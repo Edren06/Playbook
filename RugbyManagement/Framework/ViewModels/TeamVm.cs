@@ -1,4 +1,6 @@
-﻿namespace RugbyManagement.Framework.ViewModels
+﻿using RugbyManagement.Framework.Models;
+
+namespace RugbyManagement.Framework.ViewModels
 {
     public class TeamVm : _BaseVm
     {
@@ -12,7 +14,7 @@
             return DataContext.DatabaseObjects.GetTeam(teamId).SingleOrDefault();
         }
 
-        public void UpsertTeam(GetTeamResult team)
+        public void UpsertTeam(TeamPostModel team)
         {
             DataContext.DatabaseObjects.UpsertTeam(team);
         }

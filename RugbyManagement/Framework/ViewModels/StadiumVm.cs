@@ -1,4 +1,6 @@
-﻿namespace RugbyManagement.Framework.ViewModels
+﻿using RugbyManagement.Framework.Models;
+
+namespace RugbyManagement.Framework.ViewModels
 {
     public class StadiumVm : _BaseVm
     {
@@ -12,7 +14,7 @@
             return DataContext.DatabaseObjects.GetStadium(stadiumId).SingleOrDefault();
         }
 
-        public void UpsertStadium(GetStadiumResult stadium)
+        public void UpsertStadium(StadiumPostModel stadium)
         {
             DataContext.DatabaseObjects.UpsertStadium(stadium);
         }
