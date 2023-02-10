@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RugbyManagement.Framework.Models;
 using RugbyManagement.Framework.ViewModels;
 
 namespace RugbyManagement.Controllers
@@ -15,6 +16,23 @@ namespace RugbyManagement.Controllers
             {
                 PlayerTransferVm vm = new PlayerTransferVm();
                 return new JsonResult(vm.GetTeamTransferList(playerId, teamId, stadiumId));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [Route("TransferPlayer")]
+        [HttpPost]
+        public IActionResult TransferPlayer(PlayerTransferPostModel transfer)
+        {
+            try
+            {
+                PlayerTransferVm vm = new PlayerTransferVm();
+                vm.TransferPlayer(transfer);
+
+                return new JsonResult("Player Transfered");
             }
             catch (Exception ex)
             {

@@ -2,6 +2,7 @@
 ListTransferHistory
 ListTeams
 ListStadiums
+PlayerTransfer
 GetPlayer
 GetTeam
 GetStadium
