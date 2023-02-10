@@ -1,5 +1,6 @@
 ﻿using CoinJar.Framework.Classes;
 using CoinJar.Framework.Interfaces;
+using CoinJar.Framework.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoinJar.Controllers
@@ -25,7 +26,7 @@ namespace CoinJar.Controllers
 
         [Route("AddCoin")]
         [HttpPost]
-        public IActionResult AddCoin(ICoin coin)
+        public IActionResult AddCoin(Coin coin)
         {
             try
             {
