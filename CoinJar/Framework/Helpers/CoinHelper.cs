@@ -15,14 +15,19 @@ namespace CoinJar.Framework.Helpers
                 //Penny
                 case 1:
                     return (Decimal)0.088;
+                //Nickel
                 case 5:
                     return (Decimal)0.176;
+                //Dime
                 case 10:
                     return (Decimal)0.08;
+                //Quarter
                 case 25:
                     return (Decimal)0.2;
+                //Half Dollar
                 case 50:
                     return (Decimal)0.4;
+                //Dollar
                 case 100:
                     return (Decimal)0.286;
                 default:
