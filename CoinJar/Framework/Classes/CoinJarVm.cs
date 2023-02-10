@@ -4,11 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace CoinJar.Framework.Classes
 {
-    public class CoinJar : ICoinJar
+    public class CoinJarVm : ICoinJar
     {
-        [JsonIgnore]
         SqlDataContext DataContext = new SqlDataContext();
-        public CoinJar()
+        public CoinJarVm()
         {
 
         }

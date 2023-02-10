@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CoinJar.Framework.Classes;
+using CoinJar.Framework.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CoinJar.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CoinJar : Controller
+    public class CoinJarController : Controller
     {
         [Route("GetTotalAmount")]
         [HttpGet]
@@ -12,7 +14,8 @@ namespace CoinJar.Controllers
         {
             try
             {
-                return View();
+                CoinJarVm jar = new CoinJarVm();
+                return new JsonResult(jar.GetTotalAmount());
             }
             catch (Exception ex)
             {
@@ -22,11 +25,13 @@ namespace CoinJar.Controllers
 
         [Route("AddCoin")]
         [HttpPost]
-        public IActionResult AddCoin()
+        public IActionResult AddCoin(ICoin coin)
         {
             try
             {
-                return View();
+                CoinJarVm jar = new CoinJarVm();
+                jar.AddCoin(coin);
+                return new JsonResult("Added coin");
             }
             catch (Exception ex)
             {
@@ -40,7 +45,9 @@ namespace CoinJar.Controllers
         {
             try
             {
-                return View();
+                CoinJarVm jar = new CoinJarVm();
+                jar.Reset();
+                return View("Reset the jar values");
             }
             catch (Exception ex)
             {
