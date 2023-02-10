@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RugbyManagement.Framework.ViewModels;
 
 namespace RugbyManagement.Controllers
 {
@@ -8,23 +9,49 @@ namespace RugbyManagement.Controllers
     {
         [Route("GetPlayer")]
         [HttpGet]
-        public IActionResult GetPlayer(int? playerId)
+        public IActionResult GetPlayer(int playerId)
         {
-            return View();
+            try
+            {
+                PlayerVm vm = new PlayerVm();
+                return new JsonResult(vm.GetPlayer(playerId));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [Route("GetPlayers")]
         [HttpGet]
         public IActionResult GetPlayers(int? teamId, int? stadiumId)
         {
-            return View();
+            try
+            {
+                PlayerVm vm = new PlayerVm();
+                return new JsonResult(vm.GetPlayerList(teamId, stadiumId));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [Route("UpsertPlayer")]
         [HttpPost]
         public IActionResult UpsertPlayer(GetPlayerResult player)
         {
-            return View();
+            try
+            {
+                PlayerVm vm = new PlayerVm();
+                vm.UpsertPlayer(player);
+
+                return new JsonResult(player.PlayerId == 0 ? "Player created" : "Player Upserted");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
