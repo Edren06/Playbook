@@ -19,9 +19,9 @@ namespace CoinJar.Framework.Classes
             DataContext.DatabaseObjects.AddCoinToCoinJar(coin.Amount, weightOfCoin);
         }
 
-        public Decimal? GetTotalAmount()
+        public Decimal GetTotalAmount()
         {
-            return DataContext.DatabaseObjects.GetCoinJar().SingleOrDefault().Amount;
+            return DataContext.DatabaseObjects.GetCoinJar().SingleOrDefault().Amount.Value;
         }
 
         public void Reset()
