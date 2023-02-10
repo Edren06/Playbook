@@ -1,6 +1,6 @@
 ﻿namespace RugbyManagement.Framework.ViewModels
 {
-    public class TeamTransferVm : _BaseVm
+    public class PlayerTransferVm : _BaseVm
     {
         public List<ListTransferHistoryResult> GetTeamTransferList(int? playerId, int? teamId, int? stadiumId)
         {
