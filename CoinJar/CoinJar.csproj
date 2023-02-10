@@ -8,12 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Framework\Interfaces\" />
-    <Folder Include="Framework\DbConnector\" />
-    <Folder Include="Framework\Configuration\" />
+    <Folder Include="Framework\Queries\" />
   </ItemGroup>
 
 </Project>
