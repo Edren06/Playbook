@@ -35,6 +35,7 @@ namespace CoinJar.Controllers
         }
 
         [Route("ResetCoins")]
+        [HttpGet]
         public IActionResult ResetCoins()
         {
             try
