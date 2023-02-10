@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Folder Include="Framework\Queries\" />
+    <Folder Include="ObjectGenerator\" />
   </ItemGroup>
 
 </Project>

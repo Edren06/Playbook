@@ -1,9 +1,13 @@
-﻿using CoinJar.Framework.Interfaces;
+﻿using CoinJar.Framework.DbConnector;
+using CoinJar.Framework.Interfaces;
+using System.Text.Json.Serialization;
 
 namespace CoinJar.Framework.Classes
 {
     public class CoinJar : ICoinJar
     {
+        [JsonIgnore]
+        SqlDataContext DataContext = new SqlDataContext();
         public CoinJar()
         {
 
@@ -11,17 +15,17 @@ namespace CoinJar.Framework.Classes
 
         public void AddCoin(ICoin coin)
         {
-            throw new NotImplementedException();
+            DataContext.DatabaseObjects.AddCoinToCoinJar(coin.Amount, coin.Volume);
         }
 
         public Decimal GetTotalAmount()
         {
-            throw new NotImplementedException();
+            return DataContext.DatabaseObjects.GetCoinJar().SingleOrDefault().Amount;
         }
 
         public void Reset()
         {
-            throw new NotImplementedException();
+            DataContext.DatabaseObjects.ResetCoinJar();
         }
     }
 }
