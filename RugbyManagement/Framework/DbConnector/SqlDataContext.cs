@@ -1,16 +1,15 @@
-﻿namespace RugbyManagement.Framework.DbConnector
+﻿using RugbyManagement.Framework.Helpers;
+
+namespace RugbyManagement.Framework.DbConnector
 {
+    //This class is used to populate the database objects kind of in an ORM way and connect to the DB.
     public class SqlDataContext
     {
-        //This class is used to populate the database objects kind of in an ORM way and connect to the DB.
-        public class SqlDataContext
-        {
-            public DbObjects DatabaseObjects = new DbObjects("");
+        public DbObjects DatabaseObjects = new DbObjects("");
 
-            public SqlDataContext()
-            {
-                DatabaseObjects = new DbObjects(ConfigurationHelper.GetSqlConnection());
-            }
+        public SqlDataContext()
+        {
+            DatabaseObjects = new DbObjects(ConfigurationHelper.GetSqlConnection());
         }
     }
 }
