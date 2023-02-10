@@ -1,4 +1,5 @@
 ﻿using CoinJar.Framework.DbConnector;
+using CoinJar.Framework.Helpers;
 using CoinJar.Framework.Interfaces;
 using System.Text.Json.Serialization;
 
@@ -14,7 +15,8 @@ namespace CoinJar.Framework.Classes
 
         public void AddCoin(ICoin coin)
         {
-            DataContext.DatabaseObjects.AddCoinToCoinJar(coin.Amount, coin.Volume);
+            decimal? weightOfCoin = CoinHelper.GetCoinWeightsFromValue(coin);
+            DataContext.DatabaseObjects.AddCoinToCoinJar(coin.Amount, weightOfCoin);
         }
 
         public Decimal GetTotalAmount()
