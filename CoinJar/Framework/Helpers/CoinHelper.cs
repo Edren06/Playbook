@@ -2,6 +2,7 @@
 
 namespace CoinJar.Framework.Helpers
 {
+    //Helper class to return weights from coins entered.
     public static class CoinHelper
     {
         public static Decimal GetCoinWeightsFromValue(ICoin coin)

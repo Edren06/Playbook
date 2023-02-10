@@ -2,6 +2,7 @@
 
 namespace CoinJar.Framework.Helpers
 {
+    //Helper used to connect to the database.
     public static class ConfigurationHelper
     {
         public static string GetSqlConnection()
