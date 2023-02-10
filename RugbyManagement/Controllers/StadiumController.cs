@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RugbyManagement.Framework.ViewModels;
+using System.Numerics;
 
 namespace RugbyManagement.Controllers
 {
@@ -8,23 +10,49 @@ namespace RugbyManagement.Controllers
     {
         [Route("GetStadium")]
         [HttpGet]
-        public IActionResult GetStadium(int? stadiumId)
+        public IActionResult GetStadium(int stadiumId)
         {
-            return View();
+            try
+            {
+                StadiumVm vm = new StadiumVm();
+                return new JsonResult(vm.GetStadium(stadiumId));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [Route("ListStadiums")]
         [HttpGet]
-        public IActionResult UpsertStadium()
+        public IActionResult ListStadiums()
         {
-            return View();
+            try
+            {
+                StadiumVm vm = new StadiumVm();
+                return new JsonResult(vm.GetStadiumList());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [Route("UpsertStadium")]
         [HttpPost]
-        public IActionResult UpsertStadium(ListStadiumsResult stadium)
+        public IActionResult UpsertStadium(GetStadiumResult stadium)
         {
-            return View();
+            try
+            {
+                StadiumVm vm = new StadiumVm();
+                vm.UpsertStadium(stadium);
+
+                return new JsonResult(stadium.StadiumId == 0 ? "Stadium created" : "Stadium Upserted");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
