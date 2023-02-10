@@ -48,7 +48,7 @@ namespace CoinJar.Controllers
             {
                 CoinJarVm jar = new CoinJarVm();
                 jar.Reset();
-                return View("Reset the jar values");
+                return new JsonResult("Reset the jar values");
             }
             catch (Exception ex)
             {
