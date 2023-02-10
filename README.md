@@ -1,5 +1,7 @@
 # Playbook
 
+Applications are built using Visual Studio.
+
 1. Coin Jar Application
 - Restore DB CoinJar.bak in the root of this project
 - Update the ConnectionString in the API (appsettings.json) to connect to the database.
