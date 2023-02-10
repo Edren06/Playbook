@@ -17,6 +17,13 @@
         Name: string;
         Location: string;
     }
+    export class GetTeamResult
+    {
+        TeamId: number;
+        Name: string;
+        StadiumId: number;
+        StadiumName: string;
+    }
     export class ListPlayersResult
     {
         PlayerId: number;

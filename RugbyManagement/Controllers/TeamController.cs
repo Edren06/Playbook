@@ -22,7 +22,7 @@ namespace RugbyManagement.Controllers
 
         [Route("UpsertTeam")]
         [HttpPost]
-        public IActionResult UpsertTeam(ListTeamsResult team)
+        public IActionResult UpsertTeam(GetTeamResult team)
         {
             return View();
         }

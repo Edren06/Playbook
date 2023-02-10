@@ -3,7 +3,7 @@ ListTransferHistory
 ListTeams
 ListStadiums
 GetPlayer
-GetTean
+GetTeam
 GetStadium
 TransferPlayer
 UpsertPlayer
