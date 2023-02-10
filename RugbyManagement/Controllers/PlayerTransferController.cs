@@ -2,9 +2,13 @@
 
 namespace RugbyManagement.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class PlayerTransferController : Controller
     {
-        public IActionResult Index()
+        [Route("GetPlayerTransfers")]
+        [HttpGet]
+        public IActionResult GetPlayerTransfers(int? playerId, int? teamId, int? stadiumId)
         {
             return View();
         }

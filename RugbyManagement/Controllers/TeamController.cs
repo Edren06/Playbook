@@ -6,9 +6,16 @@ namespace RugbyManagement.Controllers
     [ApiController]
     public class TeamController : Controller
     {
+        [Route("GetTeam")]
+        [HttpGet]
+        public IActionResult GetTeam(int? teamId)
+        {
+            return View();
+        }
+
         [Route("ListTeams")]
         [HttpGet]
-        public IActionResult UpsertStadium(int? stadiumId)
+        public IActionResult ListTeams(int? stadiumId)
         {
             return View();
         }
