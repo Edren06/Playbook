@@ -2,11 +2,9 @@
 
 namespace RugbyManagement.Framework.ViewModels
 {
-    public class PlayerVm
+    public class PlayerVm : _BaseVm
     {
-        SqlDataContext DataContext = new SqlDataContext();
-
-        public List<ListPlayersResult> GetPlayerList(int? teamId, int stadiumId)
+        public List<ListPlayersResult> GetPlayerList(int? teamId, int? stadiumId)
         {
             return DataContext.DatabaseObjects.ListPlayers(teamId, stadiumId).ToList();
         }
