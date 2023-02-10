@@ -7,6 +7,7 @@ namespace CoinJar.Framework.Helpers
     {
         public static Decimal GetCoinWeightsFromValue(ICoin coin)
         {
+            //This just here in case the user does not input the volume and it will be calculated below in the switch statement.
             if (coin.Volume.GetValueOrDefault(0) != 0) return coin.Volume.Value;
 
             switch (coin.Amount)
